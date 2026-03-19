@@ -1,0 +1,101 @@
+{
+  "name": "DanceUIRuntime",
+  "version": "0.1.0",
+  "summary": "DanceUI Core Engine Support.",
+  "description": "DanceUI Core Engine Support.",
+  "homepage": "https://github.com/retval/DanceUIRuntime",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "retval": "husihua@bytedance.com"
+  },
+  "source": {
+    "git": "git@github.com:Bytedance/DanceUIRuntime.git",
+    "branch": "release_0.1.0"
+  },
+  "swift_versions": [
+    "5.0",
+    "5.1",
+    "5.2",
+    "5.3",
+    "5.3.2",
+    "5.5.1",
+    "5.6.0",
+    "5.9.0",
+    "6.0"
+  ],
+  "pod_target_xcconfig": {
+    "USER_HEADER_SEARCH_PATHS": "$(inherited) $(PODS_TARGET_SRCROOT)/../DanceUIDependencies/boost \"$(PODS_TARGET_SRCROOT)/../DanceUIDependencies/\" ",
+    "HEADER_SEARCH_PATHS": "$(inherited) $(PODS_TARGET_SRCROOT)/DanceUIRuntime/Sources/DanceUIRuntime/include/ $(PODS_TARGET_SRCROOT)/DanceUIGraph/Sources/DanceUIGraph/umbrella/  $(PODS_TARGET_SRCROOT)/DanceUIGraph/Sources/DanceUIGraph/src/ $(PODS_TARGET_SRCROOT)/../DanceUIDependencies/boost/ $(PODS_ROOT)/DanceUIRuntime/Sources/DanceUIRuntime/include/ $(SWIFT_BASE_LOCATION)$(SWIFT_BUILD_LOCATION_NAME)/$(SWIFT_BUILD_TOOL_NAME)-$(SWIFT_BUILD_MODE_NAME)/swift-$(SWIFT_BUILD_PLATFORM_NAME)/include/ $(SWIFT_BASE_LOCATION)swift/include/ $(SWIFT_BASE_LOCATION)swift/stdlib/public/SwiftShims/ $(SWIFT_BASE_LOCATION)swift/include/ $(SWIFT_BASE_LOCATION)swift/stdlib $(SWIFT_BASE_LOCATION)swift/include/ $(SWIFT_BASE_LOCATION)llvm-project/llvm/include/ $(SWIFT_BASE_LOCATION)$(SWIFT_BUILD_LOCATION_NAME)/$(SWIFT_BUILD_TOOL_NAME)-$(SWIFT_BUILD_MODE_NAME)/llvm-$(SWIFT_BUILD_PLATFORM_NAME)/include/ $(SWIFT_BASE_LOCATION)llvm-project/clang/include/ $(SWIFT_BASE_LOCATION)$(SWIFT_BUILD_LOCATION_NAME)/$(SWIFT_BUILD_TOOL_NAME)-$(SWIFT_BUILD_MODE_NAME)/llvm-$(SWIFT_BUILD_PLATFORM_NAME)/tools/clang/include $(SWIFT_BASE_LOCATION)cmark/src/ $(SWIFT_BASE_LOCATION)$(SWIFT_BUILD_LOCATION_NAME)/$(SWIFT_BUILD_TOOL_NAME)-$(SWIFT_BUILD_MODE_NAME)/cmark-$(SWIFT_BUILD_PLATFORM_NAME)/src/",
+    "CLANG_CXX_LANGUAGE_STANDARD": "c++17",
+    "LIBRARY_SEARCH_PATHS": "$(SDKROOT)/usr/lib/swift",
+    "ENABLE_NS_ASSERTIONS": "YES",
+    "OTHER_CPLUSPLUSFLAGS": "$(OTHER_CFLAGS) -fno-aligned-allocation",
+    "BUILD_LIBRARY_FOR_DISTRIBUTION": "YES",
+    "SWIFT_BASE_LOCATION": "$(PODS_TARGET_SRCROOT)/../DanceUIDependencies/swift/Source/",
+    "SWIFT_BUILD_LOCATION_NAME": "build",
+    "SWIFT_BUILD_TOOL_NAME": "Ninja",
+    "SWIFT_BUILD_MODE_NAME": "ReleaseAssert",
+    "SWIFT_BUILD_PLATFORM_NAME": "macosx-arm64\n",
+    "SWIFT_BUILD_LLVMLIB_MODE": "ReleaseAssert",
+    "SWIFT_BUILD_SWIFTLIB_MODE": "ReleaseAssert",
+    "GCC_PREPROCESSOR_DEFINITIONS": "$(inherited) DanceUIRuntime_POD_VERSION=@\\\"0.1.0\\ (local)\\\" DanceUIRuntime_COMMIT_ID=@\\\"5381ca84\\\""
+  },
+  "platforms": {
+    "ios": "12.0"
+  },
+  "public_header_files": [
+    "DanceUIRuntime/Sources/DanceUIRuntime/include/**/*.h",
+    "DanceUIRuntime/Sources/DanceUIRuntime/include/*.h"
+  ],
+  "private_header_files": [
+    "DanceUIRuntime/Sources/DanceUIRuntime/src/**/*.{h,hpp}",
+    "DanceUIRuntime/Sources/DanceUIRuntime/include/**/*.{hpp}"
+  ],
+  "source_files": [
+    "DanceUIRuntime/Sources/DanceUIRuntime/include/**/*",
+    "DanceUIRuntime/Sources/DanceUIRuntime/src/**/*"
+  ],
+  "dependencies": {
+    "boost": [
+      "~> 1.88.0"
+    ],
+    "swift": [
+      "~> 6.1.2"
+    ]
+  },
+  "requires_arc": false,
+  "libraries": "c++",
+  "static_framework": true,
+  "testspecs": [
+    {
+      "name": "UnitTests",
+      "test_type": "unit",
+      "pod_target_xcconfig": {
+        "USER_HEADER_SEARCH_PATHS": "$(PODS_TARGET_SRCROOT)/../DanceUIDependencies/boost \"$(PODS_TARGET_SRCROOT)/../DanceUIDependencies/\" ",
+        "HEADER_SEARCH_PATHS": "$(PODS_TARGET_SRCROOT)/DanceUIRuntime/Sources/DanceUIRuntime/src/ $(PODS_TARGET_SRCROOT)/../DanceUIDependencies/boost/ $(PODS_ROOT)/DanceUIRuntime/Sources/DanceUIRuntime/include/ $(SWIFT_BASE_LOCATION)$(SWIFT_BUILD_LOCATION_NAME)/$(SWIFT_BUILD_TOOL_NAME)-$(SWIFT_BUILD_MODE_NAME)/swift-$(SWIFT_BUILD_PLATFORM_NAME)/include/ $(SWIFT_BASE_LOCATION)swift/include/ $(SWIFT_BASE_LOCATION)swift/stdlib/public/SwiftShims/ $(SWIFT_BASE_LOCATION)swift/include/ $(SWIFT_BASE_LOCATION)swift/stdlib $(SWIFT_BASE_LOCATION)swift/include/ $(SWIFT_BASE_LOCATION)llvm-project/llvm/include/ $(SWIFT_BASE_LOCATION)$(SWIFT_BUILD_LOCATION_NAME)/$(SWIFT_BUILD_TOOL_NAME)-$(SWIFT_BUILD_MODE_NAME)/llvm-$(SWIFT_BUILD_PLATFORM_NAME)/include/ $(SWIFT_BASE_LOCATION)llvm-project/clang/include/ $(SWIFT_BASE_LOCATION)$(SWIFT_BUILD_LOCATION_NAME)/$(SWIFT_BUILD_TOOL_NAME)-$(SWIFT_BUILD_MODE_NAME)/llvm-$(SWIFT_BUILD_PLATFORM_NAME)/tools/clang/include $(SWIFT_BASE_LOCATION)cmark/src/ $(SWIFT_BASE_LOCATION)$(SWIFT_BUILD_LOCATION_NAME)/$(SWIFT_BUILD_TOOL_NAME)-$(SWIFT_BUILD_MODE_NAME)/cmark-$(SWIFT_BUILD_PLATFORM_NAME)/src/",
+        "CLANG_CXX_LANGUAGE_STANDARD": "c++17",
+        "ENABLE_NS_ASSERTIONS": "YES",
+        "OTHER_CPLUSPLUSFLAGS": "$(OTHER_CFLAGS) -fno-aligned-allocation",
+        "LIBRARY_SEARCH_PATHS": "$(SDKROOT)/usr/lib/swift",
+        "ARCHS": "$(ARCHS_STANDARD_64_BIT)",
+        "EXCLUDED_ARCHS[sdk=iphonesimulator*]": "i386",
+        "GCC_PREPROCESSOR_MACROS": "$(inherited) __DANCE_UI_RUNTIME_ENABLE_TESTING__=1",
+        "SWIFT_BASE_LOCATION": "$(PODS_TARGET_SRCROOT)/../DanceUIDependencies/swift/Source/",
+        "SWIFT_BUILD_LOCATION_NAME": "build",
+        "SWIFT_BUILD_TOOL_NAME": "Ninja",
+        "SWIFT_BUILD_MODE_NAME": "ReleaseAssert",
+        "SWIFT_BUILD_PLATFORM_NAME": "macosx-arm64\n",
+        "SWIFT_BUILD_LLVMLIB_MODE": "ReleaseAssert",
+        "SWIFT_BUILD_SWIFTLIB_MODE": "ReleaseAssert"
+      },
+      "requires_app_host": true,
+      "source_files": "DanceUIRuntime/Tests/**/*.{h,m,hpp,cpp,mm,c,cc,swift}",
+      "public_header_files": "DanceUIRuntime/Sources/DanceUIRuntime/include/**/*.{h,hpp}",
+      "private_header_files": "DanceUIRuntime/Sources/DanceUIRuntime/src/**/*.{h,hpp}"
+    }
+  ],
+  "swift_version": "6.0"
+}

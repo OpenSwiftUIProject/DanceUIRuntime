@@ -1,0 +1,14 @@
+source 'https://rubygems.org'
+require_relative 'file_patch'
+
+gem 'cocoapods', '1.12.1'
+
+group :packager, optional: true do
+  gem 'xcpretty'
+end
+
+gem 'activesupport', '5.2.6'
+gem 'json', '2.6.1'
+gem 'mutex_m'
+gem 'bigdecimal'
+

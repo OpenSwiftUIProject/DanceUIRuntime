@@ -1,0 +1,32 @@
+PODS:
+  - boost (1.88.0)
+  - DanceUIRuntime (0.1.0):
+    - boost (~> 1.88.0)
+    - swift (~> 6.1.2)
+  - DanceUIRuntime/UnitTests (0.1.0):
+    - boost (~> 1.88.0)
+    - swift (~> 6.1.2)
+  - swift (6.1.2)
+
+DEPENDENCIES:
+  - boost (from `../../DanceUIDependencies/boost`)
+  - DanceUIRuntime (from `../`)
+  - DanceUIRuntime/UnitTests (from `../`)
+  - swift (from `../../DanceUIDependencies/swift`)
+
+EXTERNAL SOURCES:
+  boost:
+    :path: "../../DanceUIDependencies/boost"
+  DanceUIRuntime:
+    :path: "../"
+  swift:
+    :path: "../../DanceUIDependencies/swift"
+
+SPEC CHECKSUMS:
+  boost: 3bbaaae7953958bf292199a51a3da8302419e7bb
+  DanceUIRuntime: 47393f4d8f3d7cbbc097d5bf4164c78696ad8fde
+  swift: bc0f1b7afa1999285d848f030f6101d19cedbe89
+
+PODFILE CHECKSUM: 6fd42b3d854316cc4029978c416257341306f40b
+
+COCOAPODS: 1.12.1

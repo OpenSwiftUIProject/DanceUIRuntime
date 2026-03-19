@@ -1,0 +1,86 @@
+//
+//  MetadataVisitor.def.h
+//  DanceUIRuntime
+//
+//  Created by Closure on 2020/9/3.
+//  Copyright © 2020 Closure. All rights reserved.
+//
+
+/// METADATAVISITOR(Name, Value)
+///   Represents a swift native runtime metadata kind. Name is the Name of the
+///   metadata kind and Value is the integral value used to identify the value.
+#ifndef METADATAVISITOR
+#define METADATAVISITOR(Name, Value, Type)
+#endif
+
+/// ABSTRACTMETADATAVISITOR(Name, Start, End)
+///   Represents an abstraction categorization of a range of metadata kind
+///   values. Name is the identifier of the range and Start, End are the
+///   beginning and end of the range.
+#ifndef ABSTRACTMETADATAVISITOR
+#define ABSTRACTMETADATAVISITOR(Name, Start, End)
+#endif
+
+/// NOMINALTYPEMETADATAVISITOR(Name, Value)
+///   Represents the native metadata kind for a swift nominal type. Name is the
+///   name of the kind and Value is the integral value used to identify the
+///   value. Delegates to METADATAVISITOR if not defined.
+#ifndef NOMINALTYPEMETADATAVISITOR
+#define NOMINALTYPEMETADATAVISITOR(Name, Value, Type) METADATAVISITOR(Name, Value, Type)
+#endif
+
+/// A class type.
+NOMINALTYPEMETADATAVISITOR(Class, 0, Class)
+
+/// A struct type.
+NOMINALTYPEMETADATAVISITOR(Struct, 0 | METADATAVISITORIsNonHeap, Struct)
+
+/// An enum type.
+/// If we add reference enums, that needs to go here.
+NOMINALTYPEMETADATAVISITOR(Enum, 1 | METADATAVISITORIsNonHeap, Enum)
+
+/// An optional type.
+// NOMINALTYPEMETADATAVISITOR(Optional, 2 | METADATAVISITORIsNonHeap)
+
+/// A foreign class, such as a Core Foundation class.
+METADATAVISITOR(ForeignClass, 3 | METADATAVISITORIsNonHeap, ForeignClass)
+
+/// A type whose value is not exposed in the metadata system.
+//METADATAVISITOR(Opaque, 0 | METADATAVISITORIsRuntimePrivate | METADATAVISITORIsNonHeap, Opaque)
+
+/// A tuple.
+METADATAVISITOR(Tuple, 1 | METADATAVISITORIsRuntimePrivate | METADATAVISITORIsNonHeap, TupleType)
+
+/// A monomorphic function.
+METADATAVISITOR(Function, 2 | METADATAVISITORIsRuntimePrivate | METADATAVISITORIsNonHeap, FunctionType)
+
+/// An existential type.
+METADATAVISITOR(Existential, 3 | METADATAVISITORIsRuntimePrivate | METADATAVISITORIsNonHeap, ExistentialType)
+
+/// A metatype.
+METADATAVISITOR(Metatype, 4 | METADATAVISITORIsRuntimePrivate | METADATAVISITORIsNonHeap, Metatype)
+
+/// An ObjC class wrapper.
+METADATAVISITOR(ObjCClassWrapper, 5 | METADATAVISITORIsRuntimePrivate | METADATAVISITORIsNonHeap, ObjCClassWrapper)
+
+/// An existential metatype.
+METADATAVISITOR(ExistentialMetatype, 6 | METADATAVISITORIsRuntimePrivate | METADATAVISITORIsNonHeap, ExistentialMetatype)
+
+/// A heap-allocated local variable using statically-generated metadata.
+//METADATAVISITOR(HeapLocalVariable, 0 | METADATAVISITORIsNonType)
+
+/// A heap-allocated local variable using runtime-instantiated metadata.
+//METADATAVISITOR(HeapGenericLocalVariable,
+//             0 | METADATAVISITORIsNonType | METADATAVISITORIsRuntimePrivate)
+
+/// A native error object.
+//METADATAVISITOR(ErrorObject,
+//             1 | METADATAVISITORIsNonType | METADATAVISITORIsRuntimePrivate)
+
+// getEnumeratedMETADATAVISITOR assumes that all the enumerated values here
+// will be <= LastEnumeratedMETADATAVISITOR.
+
+#undef ABSTRACTMETADATAVISITOR
+#undef NOMINALTYPEMETADATAVISITOR
+#undef METADATAVISITOR
+
