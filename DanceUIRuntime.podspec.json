@@ -44,7 +44,8 @@
     "GCC_PREPROCESSOR_DEFINITIONS": "$(inherited) DanceUIRuntime_POD_VERSION=@\\\"0.1.0\\ (local)\\\" DanceUIRuntime_COMMIT_ID=@\\\"5381ca84\\\""
   },
   "platforms": {
-    "ios": "13.0"
+    "ios": "13.0",
+    "osx": "10.15"
   },
   "public_header_files": [
     "DanceUIRuntime/Sources/DanceUIRuntime/include/**/*.h",

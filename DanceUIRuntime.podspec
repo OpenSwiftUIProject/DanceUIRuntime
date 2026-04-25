@@ -85,6 +85,7 @@ Pod::Spec.new do |s|
   }
 
   s.ios.deployment_target = '13.0'
+  s.osx.deployment_target = '10.15'
   #s.module_map = 'DanceUIRuntime.modulemap'
 
   s.public_header_files = 'DanceUIRuntime/Sources/DanceUIRuntime/include/**/*.h', 'DanceUIRuntime/Sources/DanceUIRuntime/include/*.h'
