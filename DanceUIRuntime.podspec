@@ -84,7 +84,7 @@ Pod::Spec.new do |s|
     "GCC_PREPROCESSOR_DEFINITIONS" => "$(inherited) #{s.danceui_runtime_version_manager_gcc_preprocessor_definitions}"
   }
 
-  s.ios.deployment_target = '12.0'
+  s.ios.deployment_target = '13.0'
   #s.module_map = 'DanceUIRuntime.modulemap'
 
   s.public_header_files = 'DanceUIRuntime/Sources/DanceUIRuntime/include/**/*.h', 'DanceUIRuntime/Sources/DanceUIRuntime/include/*.h'
