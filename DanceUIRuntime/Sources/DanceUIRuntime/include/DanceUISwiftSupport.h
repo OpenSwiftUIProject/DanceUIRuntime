@@ -72,11 +72,11 @@
 #undef DANCE_UI_INLINE
 #endif
 
-#define DANCE_UI_INLINE __attribute__((noinline))
+#define DANCE_UI_INLINE inline __attribute__((noinline))
 
 #else
 
-#define DANCE_UI_INLINE __attribute__((always_inline))
+#define DANCE_UI_INLINE inline __attribute__((always_inline))
 
 #endif
 
